@@ -1,0 +1,35 @@
+@startuml
+class violationLSP.Bicycle {
++ void accelerate()
+}
+
+class correctedLSP.Car {
++ void move()
+}
+
+class violationLSP.Main {
++ {static} void main(String[])
+}
+
+class correctedLSP.Main {
++ {static} void main(String[])
+}
+
+class correctedLSP.Bicycle {
++ void move()
+}
+
+class violationLSP.Vehicle {
++ void accelerate()
+}
+
+interface correctedLSP.Movable {
+~ void move()
+}
+
+
+
+violationLSP.Vehicle <|-- violationLSP.Bicycle
+correctedLSP.Movable <|.. correctedLSP.Car
+correctedLSP.Movable <|.. correctedLSP.Bicycle
+@enduml
